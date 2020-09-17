@@ -16,7 +16,7 @@
             <label asp-for="Image"></label>
             <input asp-for="Image" />
         </div>
-
+        @Html.ValidationMessageFor(a => a.Image)
         <div>
             <input value="Submit" type="submit" />
         </div>

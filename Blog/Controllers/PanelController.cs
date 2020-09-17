@@ -9,6 +9,7 @@ using Blog.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Blog.Controllers
 {
@@ -51,27 +52,32 @@ namespace Blog.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(PostViewModel vm)
         {
-            var post = new Post
+            if (ModelState.IsValid)
             {
-                Id = vm.Id,
-                Title = vm.Title,
-                Body = vm.Body,
-                Image = await _fileManager.SaveImage(vm.Image)
-            };
-            if (post.Id > 0)
-            {
-                _repo.UpdatePost(post);
+                var post = new Post
+                {
+                    Id = vm.Id,
+                    Title = vm.Title,
+                    Body = vm.Body,
+                    Image = await _fileManager.SaveImage(vm.Image)
+                };
+
+                if (post.Id > 0)
+                {
+                    _repo.UpdatePost(post);
+                }
+                else
+                {
+                    _repo.AddPost(post);
+                }
+
+                if (await _repo.SaveChangesAsync())
+                {
+                    return RedirectToAction("Index");
+                }
+                return View(post);
             }
-            else
-            {
-                _repo.AddPost(post);
-            }
-               
-            if (await _repo.SaveChangesAsync())
-            {
-                return RedirectToAction("Index");
-            }
-            return View(post);
+            return View(viewName:"Edit");
         }
 
         [HttpGet]
