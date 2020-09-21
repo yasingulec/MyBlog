@@ -1,25 +1,41 @@
 ﻿@model PostViewModel
+@{
 
+}
+<link href="~/lib/Trumbowyg-master/dist/ui/trumbowyg.css" rel="stylesheet" />
 <div>
     <form method="post" asp-action="Edit" asp-controller="Panel" enctype="multipart/form-data">
         <input asp-for="Id" type="hidden" />
         <div>
             <label asp-for="Title"></label>
-            <input asp-for="Title" />
+            <input id="title" asp-for="Title" />
         </div>
-        <br />
+        <div>
+            <label asp-for="Description"></label>
+            <input asp-for="Description" />
+        </div>
         <div>
             <label asp-for="Body"></label>
-            <input asp-for="Body" />
+            <textarea id="editor" asp-for="Body"></textarea>
         </div>
         <div>
             <label asp-for="Image"></label>
+            <input asp-for="CurrentImage" type="hidden" />
             <input asp-for="Image" />
         </div>
-        @Html.ValidationMessageFor(a => a.Image)
+        <div class="alert-danger d-inline-block" role="alert">
+            @Html.ValidationMessageFor(a => a.Image)
+        </div>
         <div>
             <input value="Submit" type="submit" />
         </div>
 
     </form>
 </div>
+
+@section scripts{
+    <script src="~/lib/Trumbowyg-master/dist/trumbowyg.min.js"></script>
+    <script>
+        $('#editor').trumbowyg();
+    </script>
+}

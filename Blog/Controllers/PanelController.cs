@@ -44,7 +44,9 @@ namespace Blog.Controllers
                 {
                     Id=post.Id,
                     Title=post.Title,
-                    Body=post.Body
+                    Description=post.Description,
+                    Body=post.Body,
+                    CurrentImage=post.Image
                 });
             }
         }
@@ -52,17 +54,23 @@ namespace Blog.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(PostViewModel vm)
         {
+            //todo:editlerken resim yükeleme sorununu çöz
             if (ModelState.IsValid)
             {
                 var post = new Post
                 {
                     Id = vm.Id,
                     Title = vm.Title,
-                    Body = vm.Body,
-                    Image = await _fileManager.SaveImage(vm.Image)
+                    Description=vm.Description,
+                    Body = vm.Body,                   
                 };
+                if (vm.Image == null)
+                    post.Image = vm.CurrentImage;
+                else
+                    post.Image = await _fileManager.SaveImage(vm.Image);
 
-                if (post.Id > 0)
+
+                if (vm.Id > 0)
                 {
                     _repo.UpdatePost(post);
                 }

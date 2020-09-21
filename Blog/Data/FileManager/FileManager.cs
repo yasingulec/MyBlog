@@ -22,7 +22,7 @@ namespace Blog.Data.FileManager
         }
 
         public async Task<string> SaveImage(IFormFile image)
-        {
+        {         
             try
             {
                 var save_path = Path.Combine(_imagePath);
