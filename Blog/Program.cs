@@ -39,7 +39,7 @@ namespace Blog
                     var adminUser = new IdentityUser
                     {
                         UserName = "admin",
-                        Email = "admin@test.com"
+                        Email = "admin@test.com",
                     };
                     var result = userMgr.CreateAsync(adminUser, "password").GetAwaiter().GetResult();
                     userMgr.AddToRoleAsync(adminUser, adminRole.Name).GetAwaiter().GetResult();
@@ -47,7 +47,6 @@ namespace Blog
             }
             catch (Exception e)
             {
-
                 Console.WriteLine(e);
             }
            

@@ -38,8 +38,8 @@ namespace Blog
             services.ConfigureApplicationCookie(options =>
             {
                 options.LoginPath = "/Auth/Login";
-            }
-            );
+            });
+
             services.AddTransient<IRepository, Repository>();
             services.AddTransient<IFileManager, FileManager>();
 

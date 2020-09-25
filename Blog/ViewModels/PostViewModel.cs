@@ -17,6 +17,7 @@ namespace Blog.ViewModels
         [MaxFileSize(5*1024*1024)]
         [AllowedExtensions(new string[] {".jpg",".png",".jpeg",".gif"})]
         public string CurrentImage { get; set; }
+        public int CategoryId { get; set; }
         public IFormFile Image { get; set; } = null;
     }
 }

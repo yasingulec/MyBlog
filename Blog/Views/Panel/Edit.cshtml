@@ -19,6 +19,12 @@
             <textarea id="editor" asp-for="Body"></textarea>
         </div>
         <div>
+            <select asp-for="CategoryId">
+                <option value="1">Programming</option>
+                <option value="2">Technology</option>
+            </select>
+        </div>
+        <div>
             <label asp-for="Image"></label>
             <input asp-for="CurrentImage" type="hidden" />
             <input asp-for="Image" />

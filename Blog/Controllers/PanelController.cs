@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Blog.Data.FileManager;
 using Blog.Data.Repositories.Abstract;
 using Blog.Models;
 using Blog.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Blog.Controllers
 {
@@ -54,7 +49,6 @@ namespace Blog.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(PostViewModel vm)
         {
-            //todo:editlerken resim yükeleme sorununu çöz
             if (ModelState.IsValid)
             {
                 var post = new Post
@@ -62,7 +56,8 @@ namespace Blog.Controllers
                     Id = vm.Id,
                     Title = vm.Title,
                     Description=vm.Description,
-                    Body = vm.Body,                   
+                    Body = vm.Body,     
+                    CategoryId=vm.CategoryId
                 };
                 if (vm.Image == null)
                     post.Image = vm.CurrentImage;
