@@ -1,6 +1,6 @@
 ﻿@model PostViewModel
 @{
-
+    
 }
 <link href="~/lib/Trumbowyg-master/dist/ui/trumbowyg.css" rel="stylesheet" />
 <div>
@@ -9,6 +9,10 @@
         <div>
             <label asp-for="Title"></label>
             <input id="title" asp-for="Title" />
+        </div>
+        <div>
+            <label asp-for="Tags"></label>
+            <input asp-for="Tags" />
         </div>
         <div>
             <label asp-for="Description"></label>
@@ -20,6 +24,7 @@
         </div>
         <div>
             <select asp-for="CategoryId">
+                <option disabled selected value="">Select Category</option>
                 <option value="1">Programming</option>
                 <option value="2">Technology</option>
             </select>

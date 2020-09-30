@@ -11,9 +11,9 @@ namespace Blog.Controllers
     [Authorize(Roles = "Admin")]
     public class PanelController : Controller
     {
-        private IRepository _repo;
+        private IPostRepository _repo;
         private IFileManager _fileManager;
-        public PanelController(IRepository repo, IFileManager fileManager)
+        public PanelController(IPostRepository repo, IFileManager fileManager)
         {
             _repo = repo;
             _fileManager = fileManager;
@@ -41,7 +41,10 @@ namespace Blog.Controllers
                     Title=post.Title,
                     Description=post.Description,
                     Body=post.Body,
-                    CurrentImage=post.Image
+                    CurrentImage=post.Image,
+                    CategoryId=post.CategoryId,
+                    Tags=post.Tags
+
                 });
             }
         }
@@ -57,7 +60,8 @@ namespace Blog.Controllers
                     Title = vm.Title,
                     Description=vm.Description,
                     Body = vm.Body,     
-                    CategoryId=vm.CategoryId
+                    CategoryId=vm.CategoryId,
+                    Tags=vm.Tags
                 };
                 if (vm.Image == null)
                     post.Image = vm.CurrentImage;
@@ -67,6 +71,7 @@ namespace Blog.Controllers
 
                 if (vm.Id > 0)
                 {
+                    post.CategoryId = vm.CategoryId;
                     _repo.UpdatePost(post);
                 }
                 else

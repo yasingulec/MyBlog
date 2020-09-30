@@ -1,11 +1,15 @@
 ﻿@model IEnumerable<Post>
+@{ 
+    ViewBag.Title = "Blog Website";
+    ViewBag.Description = "This blog about programming";
+    ViewBag.Keywords = "C#,MSSQL,ORACLE";
+}
     <div class="container mt-3">
         <div class="row">
             <div class="col-md-3">
                 <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action">Tech</a>
-                    <a href="#" class="list-group-item list-group-item-action">Programming</a>
-                    <a href="#" class="list-group-item list-group-item-action">Design Patterns</a>
+                   @await Component.InvokeAsync("Category")
+    
                 </div>
             </div>
             <div class="col-md-9">
@@ -13,7 +17,7 @@
                 {
                     <div class="card">
                         <div class="card-header">
-                            19/9/2020
+                            @item.Created
                         </div>
                         <img src="/content/blog/@item.Image" class="card-img-top" alt="...">
 

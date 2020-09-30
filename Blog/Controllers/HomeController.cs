@@ -15,16 +15,16 @@ namespace Blog.Controllers
 {
     public class HomeController : Controller
     {
-        private IRepository _repo;
+        private IPostRepository _repo;
         private IFileManager _fileManager;
-        public HomeController(IRepository repo,IFileManager fileManager)
+        public HomeController(IPostRepository repo,IFileManager fileManager)
         {
             _repo = repo;
             _fileManager = fileManager;
         }
-        public IActionResult Index()
+        public IActionResult Index(string categoryname)
         {
-            var posts = _repo.GetAllPosts();
+            var posts = string.IsNullOrEmpty(categoryname)? _repo.GetAllPosts():_repo.GetAllPostsByCategory(categoryname);
             return View(posts);
         }
         [HttpGet]

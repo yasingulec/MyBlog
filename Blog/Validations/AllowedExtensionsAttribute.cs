@@ -15,13 +15,13 @@ namespace Blog.Validations
         {
             _extension = extensions;
         }
-
+        string extension = string.Empty;
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             var file = value as IFormFile;
             if (file != null)
             {
-                var extension = Path.GetExtension(file.FileName);
+                 extension = Path.GetExtension(file.FileName);
                 if (!_extension.Contains(extension.ToLower()))
                 {
                     return new ValidationResult(GetErrorMessage());
@@ -32,7 +32,7 @@ namespace Blog.Validations
 
         public string GetErrorMessage()
         {
-            return $"This photo extension is not allowed!";
+            return $"This photo's extension type {extension} is not allowed!";
         }
     }
 }

@@ -33,3 +33,4 @@ C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Blog.ge
 C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Blog.csproj.CopyComplete
 C:\Users\yasin\source\repos\BlogApplication\Blog\bin\Debug\netcoreapp2.1\package-lock.json
 C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Blog.csprojAssemblyReference.cache
+C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\Category\Default.cshtml.g.cs

@@ -1,5 +1,6 @@
 ﻿using Blog.Data.Repositories.Abstract;
 using Blog.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace Blog.Data.Repositories.Concrete
 {
-    public class Repository : IRepository
+    public class PostRepository : IPostRepository
     {
         private AppDbContext _ctx;
-        public Repository(AppDbContext ctx)
+        public PostRepository(AppDbContext ctx)
         {
             _ctx = ctx;
         }
@@ -30,9 +31,14 @@ namespace Blog.Data.Repositories.Concrete
            return _ctx.Posts.ToList();
         }
 
+        public List<Post> GetAllPostsByCategory(string categoryname)
+        {
+            return _ctx.Posts.Where(p => p.Category.Name.ToLower().Equals(categoryname.ToLower())).ToList();
+        }
+
         public Post GetPost(int id)
         {
-            return _ctx.Posts.FirstOrDefault(i => i.Id == id);
+            return _ctx.Posts.Include(p=>p.Category).FirstOrDefault(p=>p.Id==id);
         }
 
         public async Task<bool> SaveChangesAsync()
