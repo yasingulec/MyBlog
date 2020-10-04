@@ -10,13 +10,11 @@ C:\Users\yasin\source\repos\BlogApplication\Blog\bin\Debug\netcoreapp2.1\Blog.Vi
 C:\Users\yasin\source\repos\BlogApplication\Blog\bin\Debug\netcoreapp2.1\Blog.Views.pdb
 C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Blog.AssemblyInfoInputs.cache
 C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Blog.AssemblyInfo.cs
-C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Blog.csproj.CoreCompileInputs.cache
 C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Blog.RazorAssemblyInfo.cache
 C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Blog.RazorAssemblyInfo.cs
 C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Blog.TagHelpers.input.cache
 C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Blog.TagHelpers.output.cache
 C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Blog.RazorCoreGenerate.cache
-C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Auth\Login.cshtml.g.cs
 C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Home\Post.cshtml.g.cs
 C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Panel\Edit.cshtml.g.cs
@@ -34,3 +32,5 @@ C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Blog.cs
 C:\Users\yasin\source\repos\BlogApplication\Blog\bin\Debug\netcoreapp2.1\package-lock.json
 C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Blog.csprojAssemblyReference.cache
 C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\Category\Default.cshtml.g.cs
+C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Blog.csproj.CoreCompileInputs.cache
+C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Auth\Login.cshtml.g.cs

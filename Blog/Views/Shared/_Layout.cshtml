@@ -15,18 +15,18 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                <ul class="navbar-nav mr-auto" id="mytab">
+                    <li class="nav-item" id="Home">
                         <a class="nav-link" asp-action="Index" asp-controller="Home"> Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li>
-                        <a class="nav-link">Articles</a>
+                    <li class="nav-item" id="Articles">
+                        <a class="nav-link" asp-action="Index" asp-controller="Home">Articles</a>
                     </li>
-                    <li>
-                        <a class="nav-link">About Me</a>
+                    <li class="nav-item" id="Aboutme">
+                        <a class="nav-link" asp-action="Index" asp-controller="Home">About Me</a>
                     </li>
-                    <li>
-                        <a class="nav-link">Contact</a>
+                    <li class="nav-item" id="Contact">
+                        <a class="nav-link" asp-action="Index" asp-controller="Home">Contact</a>
                     </li>
                     <li class="nav-item">
                         @if (User.Identity.IsAuthenticated)
@@ -54,11 +54,23 @@
         @RenderBody()
     </div>
 
-    <div class="card-footer">
 
-    </div>
     <script src="~/static/jquery/dist/jquery.js"></script>
     <script src="~/static/bootstrap/dist/js/bootstrap.js"></script>
     @RenderSection("scripts", false)
+    <script>
+
+                    //link arası geçişler active classı eklenecek
+
+
+                    //$(document).ready(function () {
+                    //    $('li.active').removeClass('active');
+                    //    $(".nav-link").click(function () {
+                    //        var addressValue = $(this).attr("href");
+                    //        $(this).parent().addClass('active');
+                    //        alert(addressValue);
+                    //    });
+                    //});
+    </script>
 </body>
 </html>

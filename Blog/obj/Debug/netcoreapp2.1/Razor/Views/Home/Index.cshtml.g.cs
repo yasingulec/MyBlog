@@ -124,7 +124,7 @@ WriteAttributeValue("", 737, item.Image, 737, 11, false);
             WriteLiteral("</p>\r\n                            ");
             EndContext();
             BeginContext(1003, 102, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d46a0a42274247f9878e0e9cc854f855", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5dd23518216f4fa48743b74330d20c64", async() => {
                 BeginContext(1094, 7, true);
                 WriteLiteral("Details");
                 EndContext();

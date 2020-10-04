@@ -65,7 +65,7 @@ using Blog.ViewModels;
             WriteLiteral("        ");
             EndContext();
             BeginContext(107, 141, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fd2798cb75ad45a6958f8fb68c32deaf", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "78b0d2ae88ff420fb1c574680be4414e", async() => {
                 BeginContext(235, 9, false);
 #line 6 "C:\Users\yasin\source\repos\BlogApplication\Blog\Views\Shared\Components\Category\Default.cshtml"
                                                                                                                                   Write(item.Name);

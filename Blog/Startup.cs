@@ -38,6 +38,7 @@ namespace Blog
             services.ConfigureApplicationCookie(options =>
             {
                 options.LoginPath = "/Auth/Login";
+                options.LogoutPath = "/Auth/Logout";
             });
 
             services.AddTransient<IPostRepository, PostRepository>();
