@@ -40,7 +40,8 @@ namespace Blog
                 options.LoginPath = "/Auth/Login";
                 options.LogoutPath = "/Auth/Logout";
             });
-
+            
+            services.AddHttpContextAccessor();
             services.AddTransient<IPostRepository, PostRepository>();
             services.AddTransient<ICategoryRepository, CategoryRepository>();
             services.AddTransient<IFileManager, FileManager>();

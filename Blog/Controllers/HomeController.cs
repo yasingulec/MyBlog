@@ -6,6 +6,7 @@ using Blog.Data;
 using Blog.Data.FileManager;
 using Blog.Data.Repositories.Abstract;
 using Blog.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.UI.Pages.Internal.Account;
 using Microsoft.AspNetCore.Internal;
 using Microsoft.AspNetCore.Mvc;
@@ -17,14 +18,16 @@ namespace Blog.Controllers
     {
         private IPostRepository _repo;
         private IFileManager _fileManager;
+       
         public HomeController(IPostRepository repo,IFileManager fileManager)
         {
             _repo = repo;
             _fileManager = fileManager;
+           
         }
         public IActionResult Index(string categoryname)
         {
-            var posts = string.IsNullOrEmpty(categoryname)? _repo.GetAllPosts():_repo.GetAllPostsByCategory(categoryname);
+            var posts = string.IsNullOrEmpty(categoryname) ? _repo.GetAllPosts() : _repo.GetAllPostsByCategory(categoryname);  
             return View(posts);
         }
         [HttpGet]

@@ -4,6 +4,7 @@ using Blog.Data.Repositories.Abstract;
 using Blog.Models;
 using Blog.ViewModels;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blog.Controllers
@@ -17,6 +18,7 @@ namespace Blog.Controllers
         {
             _repo = repo;
             _fileManager = fileManager;
+           
 
         }
         public IActionResult Index()
