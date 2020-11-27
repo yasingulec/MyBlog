@@ -1,34 +1,83 @@
 ﻿@model IEnumerable<Post>
-@{ 
+@{
     ViewBag.Title = "Blog Website";
     ViewBag.Description = "This blog about programming";
     ViewBag.Keywords = "C#,MSSQL,ORACLE";
+    var base_path = Context.Request.PathBase;
 }
-    <div class="container mt-3">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="list-group">
-                   @await Component.InvokeAsync("Category")
-    
-                </div>
-            </div>
-            <div class="col-md-9">
-                @foreach (var item in Model)
-                {
-                    <div class="card">
-                        <div class="card-header">
-                            @item.Created
-                        </div>
-                        <img src="/content/blog/@item.Image" class="card-img-top" alt="...">
+<div id="content">
+    <div class="container">
+        <div class="blog-with-sidebar">
+            <div class="row">
+                <div class="col-12 col-md-5 col-lg-4 order-md-2">
+                    <div class="blog-sidebar">
 
-                        <div class="card-body">
-                            <h5 class="card-title">@item.Title</h5>
-                            <p class="card-text">@item.Description</p>
-                            <a asp-action="Post" asp-controller="Home" asp-route-id="@item.Id" class="btn btn-primary">Details</a>
-                        </div>
+
+                        @await Component.InvokeAsync("Category")
+
+
+                        <!-- Trending Post Side Bar Section-->
+
+
+
+                        @await Component.InvokeAsync("TrendingPost")
+
+                        <!-- Subscribe Form -->
+                        <form class="subcribe-box subcribe-box" action="/" method="POST">
+                            <h5>Subcribe</h5>
+                            <p>Lorem ipsum dolor amet, consectetur adipiscing elit, sed tempor.</p>
+                            <input placeholder="Your email" name="email" type="email">
+                            <a class="btn -normal" href="#">Subcribe</a>
+                        </form>
                     </div>
-                    <br />
-                }
+                </div>
+
+                <div class="col-12 col-md-7 col-lg-8 order-md-1">
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+                            var image_path = $"{base_path}/Image/{item.Image}";
+                            <div class="col-sm-6 col-md-12">
+                                <div class="post-card -full -center">
+                                    <a class="card__cover" asp-controller="Home" asp-action="Post" asp-route-id="@item.Id">
+                                        <img src="@image_path" alt="@item.Title">
+                                    </a>
+                                    <div class="card__content">
+                                        <!-- Content Category -->
+                                        <h5 class="card__content-category">@item.Category.Name</h5>
+                                        <!-- Content Heading -->
+                                        <a class="card__content-title" asp-controller="Home" asp-action="Post" asp-route-id="@item.Id">@item.Title</a>
+                                        <div class="card__content-info">
+                                            <!-- Content Author -->
+                                            <div class="info__time info__author">
+                                                <i class="far fa-user"></i>
+                                                <p>@item.Author</p>
+                                            </div>
+                                            <!-- Content Time and Date -->
+                                            <div class="info__time">
+                                                <i class="far fa-clock"></i>
+                                                <p>@item.Created</p>
+                                            </div>
+                                            <!-- Comments -->
+                                            <div class="info__comment">
+                                                <i class="far fa-comment"></i>
+                                                <p>3</p>
+                                            </div>
+                                        </div>
+                                        <!-- post Description -->
+                                        <p class="card__content-description">@item.Description</p>
+                                        <a class="more-btn" asp-controller="Home" asp-action="Post" asp-route-id="@item.Id">Read more </a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</div>
+
+
+
+

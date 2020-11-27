@@ -11,6 +11,7 @@ namespace Blog.Data.Repositories.Abstract
         Post GetPost(int id);
         List<Post> GetAllPosts();
         List<Post> GetAllPostsByCategory(string categoryname);
+        List<Post> GetTrendingPosts();
         void AddPost(Post post);
         void UpdatePost(Post post);
         void DeletePost(int id);

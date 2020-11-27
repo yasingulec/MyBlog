@@ -6,71 +6,213 @@
     <meta name="description" content="@ViewBag.Description" />
     <meta name="keywords" content="@ViewBag.Keywords" />
     <link href="~/static/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <!-- Google fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.13.0/css/pro.min.css" />
+    <!--build:css assets/css/styles.min.css-->
+    <link rel="stylesheet" href="~/assets/css/elegant.css" />
+    <link rel="stylesheet" href="~/assets/css/custom_bootstrap.css" />
+    <link rel="stylesheet" href="~/assets/css/slick.css" />
+    <link rel="stylesheet" href="~/assets/css/plyr.min.css" />
+    <!-- cutom css -->
+    <link rel="stylesheet" href="~/assets/css/style.css" />
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto" id="mytab">
-                    <li class="nav-item" id="Home">
-                        <a class="nav-link" asp-action="Index" asp-controller="Home"> Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item" id="Articles">
-                        <a class="nav-link" asp-action="Index" asp-controller="Home">Articles</a>
-                    </li>
-                    <li class="nav-item" id="Aboutme">
-                        <a class="nav-link" asp-action="Index" asp-controller="Home">About Me</a>
-                    </li>
-                    <li class="nav-item" id="Contact">
-                        <a class="nav-link" asp-action="Index" asp-controller="Home">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            <a class="nav-link" asp-action="Index" asp-controller="Panel">Panel</a>
-                        }
-                    </li>
-                    <li class="nav-item">
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            <a class="nav-link" asp-action="Logout" asp-controller="Auth">Logout</a>
-                        }
-                    </li>
-
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+    <!-- pre loader -->
+    <div id="load">
+        <div class="load__content">
+            <div class="load__icon"><img src="~/assets/images/icons/load.gif" alt="Loading icon" /></div>
+        </div>
+    </div>
+    <!--Nav bar -->
+    <header class="theme-default">
+        <div id="search-box">
+            <div class="container">
+                <form action="/" method="POST">
+                    <input type="text" placeholder="Searching for news" name="search" />
+                    <button><i class="fas fa-arrow-right"></i></button>
                 </form>
             </div>
         </div>
-    </nav>
+        <div class="container">
+            <div class="header-wrapper">
+                <a class="header__logo" asp-action="Index" asp-controller="Home"><img src="~/assets/images/logo3.png" alt="Logo" /></a>
+                <nav>
+                    <ul>
+                        <li class="nav-item active"><a asp-action="Index" asp-controller="Home">Home</a></li>
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="Home">Blog</a>
+                            <!-- Blog category drop down -->
+                            <!-- <ul class="dropdown-menu">
+                              <li><a href="#">BLOG CATEGORY 1</a></li>
+                              <li><a href="#">BLOG CATEGORY 2</a></li>
+                              <li><a href="#">BLOG CATEGORY 3</a></li>
+                            </ul> -->
+                        </li>
+                        <li class="nav-item"><a asp-action="Index" asp-controller="Home">About Me</a></li>
+                        <li class="nav-item"><a asp-action="Index" asp-controller="Home">Contact</a></li>
+                        <li class="nav-item">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <a class="nav-link" asp-action="Index" asp-controller="Panel">Panel</a>
+                            }
+                        </li>
+                        <li class="nav-item">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <a class="nav-link" asp-action="Logout" asp-controller="Auth">Logout</a>
+                            }
+                        </li>
+                    </ul>
+                </nav>
+                <!-- Social Icons -->
+                <div class="header__icon-group">
+                    <a href="#" id="search"><i class="fas fa-search"></i></a>
+                    <div class="social">
+                        <a href="https://www.facebook.com/yasingulec34" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/sippinonsyrup/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/yasingulec/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/yasingulec" target="_blank"><i class="fab fa-github"></i></a>
+
+                        <a id="mobile-menu-controller" href="#"><i class="fas fa-bars"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
     <div id="main">
         @RenderBody()
     </div>
 
 
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="footer-col -about">
+                            <div class="center-line-title">
+                                <h5>About us</h5>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida lacus vel facilisis. </p>
+                            <div class="contact-method">
+                                <p> <i class="fas fa-map-marker-alt"></i>Dar es Saalam,Tanzania</p>
+                                <p> <i class="far fa-mobile-android"></i>+255 123456   |   +255 123456789</p>
+                                <p> <i class="far fa-envelope-open"></i>hello@fuse.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="footer-col -feature-post">
+                            <div class="center-line-title">
+                                <h5>Feature posts</h5>
+                            </div>
+                            <div class="feature-post-block">
+                                <div class="post-card -tiny">
+                                    <a class="card__cover" href="post.html">
+                                        <!-- img size 360 x 360 -->
+                                        <img src="~/assets/images/posts/Opensource.jpg" alt="Best Open Source Tools For Developers" />
+                                    </a>
+                                    <div class="card__content">
+                                        <h5 class="card__content-category">Open source</h5>
+                                        <a class="card__content-title" href="post.html">Best Open Source Tools For Developers</a>
+                                        <div class="card__content-info">
+                                            <div class="info__time">
+                                                <i class="far fa-clock"></i>
+                                                <p>Clock  Wed 02, 2020</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="post-card -tiny">
+                                    <a class="card__cover" href="post.html">
+                                        <!-- img size 360 x 360 -->
+                                        <img src="~/assets/images/posts/webdesign.jpg" alt="Best design resources websites every developer should bookmark" />
+                                    </a>
+                                    <div class="card__content">
+                                        <h5 class="card__content-category">Ui / Ux</h5>
+                                        <a class="card__content-title" href="post.html">Best design resources websites every developer should bookmark</a>
+                                        <div class="card__content-info">
+                                            <div class="info__time">
+                                                <i class="far fa-clock"></i>
+                                                <p>Clock  Wed 02, 2020</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="post-card -tiny">
+                                    <!-- img size 360 -->
+                                    <a class="card__cover" href="post.html">
+                                        <img src="~/assets/images/posts/react.jpg" alt="Why You Should Be Using React" />
+                                    </a>
+                                    <!-- content -->
+                                    <div class="card__content">
+                                        <h5 class="card__content-category">Web Development</h5>
+                                        <a class="card__content-title" href="post.html">Why You Should Be Using React</a>
+                                        <div class="card__content-info">
+                                            <div class="info__time">
+                                                <i class="far fa-clock"></i>
+                                                <p>Clock  Wed 02, 2020</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-4">
+                        <div class="footer-col -util">
+                            <div class="row">
+                                <!-- Blog Tags -->
+                                <div class="col-12 col-md-6 col-lg-12">
+                                    <div class="center-line-title">
+                                        <h5>Blog Tags</h5>
+                                    </div>
+                                    <div class="tags-group">
+                                        <a class="tag-btn" href="blog-category.html">Fuse</a>
+                                        <a class="tag-btn" href="blog-category.html">Web Development</a>
+                                        <a class="tag-btn" href="blog-category.html">Ui / Ux</a>
+                                        <a class="tag-btn" href="blog-category.html">Open source</a>
+                                        <a class="tag-btn" href="blog-category.html">Productivity</a>
+                                        <a class="tag-btn" href="blog-category.html">Github</a>
+                                    </div>
+                                </div>
+                                <!-- Social Media -->
+                                <div class="col-12 col-md-6 col-lg-12">
+                                    <div class="center-line-title">
+                                        <h5>Follow us</h5>
+                                    </div>
+                                    <div class="social-block">
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2020, Yasih Güleç - All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!--todo: footer ekle-->
     <script src="~/static/jquery/dist/jquery.js"></script>
     <script src="~/static/bootstrap/dist/js/bootstrap.js"></script>
+    <script rel="script/javascript" src="~/assets/js/slick.min.js"></script>
+    <script rel="script/javascript" src="~/assets/js/plyr.min.js"></script>
+    <script rel="script/javascript" src="~/assets/js/masonry.pkgd.min.js"></script>
+    <script rel="script/javascript" src="~/assets/js/imagesloaded.pkgd.min.js"></script>
+    <script rel="script/javascript" src="~/assets/js/vimeo.player.min.js"></script>
+    <script rel="script/javascript" src="~/assets/js/main.js"></script>
     @RenderSection("scripts", false)
-    <script>
-
-                    //link arası geçişler active classı eklenecek
-
-
-                    //$(document).ready(function () {
-                    //    $('li.active').removeClass('active');
-                    //    $(".nav-link").click(function () {
-                    //        var addressValue = $(this).attr("href");
-                    //        $(this).parent().addClass('active');
-                    //        alert(addressValue);
-                    //    });
-                    //});
-    </script>
 </body>
 </html>

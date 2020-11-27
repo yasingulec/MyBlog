@@ -28,17 +28,22 @@ namespace Blog.Data.Repositories.Concrete
 
         public List<Post> GetAllPosts()
         {
-           return _ctx.Posts.ToList();
+           return _ctx.Posts.Include(p => p.Category).ToList();
         }
 
         public List<Post> GetAllPostsByCategory(string categoryname)
         {
-            return _ctx.Posts.Where(p => p.Category.Name.ToLower().Equals(categoryname.ToLower())).ToList();
+            return _ctx.Posts.Include(p => p.Category).Where(p => p.Category.Name.ToLower().Equals(categoryname.ToLower())).ToList();
         }
 
         public Post GetPost(int id)
         {
             return _ctx.Posts.Include(p=>p.Category).FirstOrDefault(p=>p.Id==id);
+        }
+
+        public List<Post> GetTrendingPosts()
+        {
+            return _ctx.Posts.Include(p=>p.Category).OrderByDescending(x=>x.ViewCount).Take(5).ToList();
         }
 
         public async Task<bool> SaveChangesAsync()

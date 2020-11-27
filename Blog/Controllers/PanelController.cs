@@ -37,11 +37,13 @@ namespace Blog.Controllers
             else
             {
                 var post = _repo.GetPost((int)id);
+                //todo: category idyi select list ile gönder
                 return View(new PostViewModel
                 {
                     Id=post.Id,
                     Title=post.Title,
                     Description=post.Description,
+                    Author=post.Author,
                     Body=post.Body,
                     CurrentImage=post.Image,
                     CategoryId=post.CategoryId,
@@ -61,6 +63,7 @@ namespace Blog.Controllers
                     Id = vm.Id,
                     Title = vm.Title,
                     Description=vm.Description,
+                    Author="Yasin Güleç",
                     Body = vm.Body,     
                     CategoryId=vm.CategoryId,
                     Tags=vm.Tags

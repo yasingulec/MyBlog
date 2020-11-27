@@ -31,7 +31,7 @@ namespace Blog.Validations
 
         public string GetErrorMessage()
         {
-            return $"Maximum allowed file size is { _maxFileSize} bytes.";
+            return $"Maximum allowed file size is {_maxFileSize} bytes.";
         }
     }
 }

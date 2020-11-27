@@ -9,6 +9,8 @@ namespace Blog.Models
         public string Body { get; set; } = "";
         public string Description { get; set; } = "";
         public string Image { get; set; } = "";
+        public string Author { get; set; } = "";
+        public int ViewCount { get; set; }
         public DateTime Created { get; set; } = DateTime.Now;
         public string Tags { get; set; } = "";
         public int CategoryId { get; set; }

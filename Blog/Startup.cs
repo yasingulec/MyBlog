@@ -9,6 +9,8 @@ using Blog.Data.Repositories.Abstract;
 using Blog.Data.Repositories.Concrete;
 using Microsoft.AspNetCore.Identity;
 using Blog.Data.FileManager;
+using Microsoft.AspNetCore.Http;
+using System;
 
 namespace Blog
 {
@@ -24,6 +26,7 @@ namespace Blog
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(_Configuration.GetConnectionString("DefaultConnection")));
             services.AddIdentity<IdentityUser,IdentityRole>(options=>
             {
@@ -35,6 +38,20 @@ namespace Blog
                 //.AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>();
 
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options =>
+            {
+                // Set a short timeout for easy testing.
+                options.IdleTimeout = TimeSpan.FromSeconds(10);
+                options.Cookie.HttpOnly = true;
+            });
             services.ConfigureApplicationCookie(options =>
             {
                 options.LoginPath = "/Auth/Login";
@@ -53,12 +70,15 @@ namespace Blog
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
-            }           
+                
+            }
+            app.UseDeveloperExceptionPage();
             app.UseStaticFiles();
             app.UseAuthentication();
+            app.UseSession();
             app.UseStatusCodePages();
             app.UseMvcWithDefaultRoute();
+           
         }
     }
 }

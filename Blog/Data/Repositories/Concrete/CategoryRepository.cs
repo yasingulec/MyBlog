@@ -14,6 +14,7 @@ namespace Blog.Data.Repositories.Concrete
         {
             _ctx = ctx;
         }
+        //todo:category ekleme metodu, image property
         public List<Category> Categories()
         {
             return _ctx.Categories.ToList();

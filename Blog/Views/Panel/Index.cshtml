@@ -1,21 +1,29 @@
 ﻿@model IEnumerable<Post>
-<h1>
-    Admin Panel
-</h1>
+    <div class="container">
+        <h3 class="text-center mt-5">
+            Admin Panel
+        </h3>
+        <a asp-action="Edit" asp-controller="Panel" class="font-weight-bold text-decoration-none">Create a New Post</a>
+        <table class="table table-hover table-bordered table-dark">
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Title</td>
+                        <td>
+                            <a asp-action="Edit" asp-controller="Panel" asp-route-id="@item.Id">
+                                Edit
+                            </a>
+                        </td>
+                        <td>
+                            <a asp-action="Remove" asp-controller="Panel" asp-route-id="@item.Id">
+                                Remove
+                            </a>
+                        </td>
+                    </tr>
 
-<a asp-action="Edit" asp-controller="Panel">Create Post</a>
-<ul>
-    @foreach (var item in Model)
-    {
-        <li>
-            @item.Title
-            <a asp-action="Edit" asp-controller="Panel" asp-route-id="@item.Id">
-                Edit
-            </a>
-            <a asp-action="Remove" asp-controller="Panel" asp-route-id="@item.Id">
-                Remove
-            </a>
-        </li>
+                }
 
-    }
-</ul>
+            </tbody>
+        </table>
+    </div>

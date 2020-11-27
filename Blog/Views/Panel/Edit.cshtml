@@ -3,8 +3,8 @@
 
 }
 <link href="~/lib/Trumbowyg-master/dist/ui/trumbowyg.css" rel="stylesheet" />
-<div class="container mt-5">
-    <form method="post" asp-action="Edit" asp-controller="Panel" enctype="multipart/form-data">
+<div class="container" style="margin-top:210px;">
+    <form method="post" class="" asp-action="Edit" asp-controller="Panel" enctype="multipart/form-data">
         <input asp-for="Id" type="hidden" />
         <div class="row">
             <div class="col">
@@ -49,8 +49,10 @@
                     <label asp-for="Image"></label>
                     <div class="input-group">
                         <div class="custom-file">
+                            <input type="hidden" asp-for="CurrentImage">
+
                             <input type="file" asp-for="Image" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
-                            <label class="custom-file-label" for="inputGroupFile04">Choose a file</label>
+                            <label class="custom-file-label" for="inputGroupFile04"></label>
                         </div>
                     </div>
                 </div>

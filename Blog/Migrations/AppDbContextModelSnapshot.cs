@@ -38,6 +38,8 @@ namespace Blog.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Author");
+
                     b.Property<string>("Body");
 
                     b.Property<int>("CategoryId");
@@ -51,6 +53,8 @@ namespace Blog.Migrations
                     b.Property<string>("Tags");
 
                     b.Property<string>("Title");
+
+                    b.Property<int>("ViewCount");
 
                     b.HasKey("Id");
 

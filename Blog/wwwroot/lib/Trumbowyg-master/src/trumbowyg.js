@@ -220,7 +220,6 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
         t.svgPath = !!t.doc.querySelector('base') ? window.location.href.split('#')[0] : '';
         if ($('#' + trumbowygIconsId, t.doc).length === 0 && svgPathOption !== false) {
             if (svgPathOption == null) {
-                // Hack to get svgPathOption based on trumbowyg.js path
                 var scriptElements = document.getElementsByTagName('script');
                 for (var i = 0; i < scriptElements.length; i += 1) {
                     var source = scriptElements[i].src;

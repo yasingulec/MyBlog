@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Post>
+<div class="blog-sidebar-section -trending-post">
+    <div class="center-line-title">
+        <h5>Trending post</h5>
+    </div>
+    @{ 
+        int rank = 0;
+    }
+    @foreach (var item in Model)
+    {
+        rank++;
+    <!--Trending Post 1 -->
+    <div class="trending-post">
+        <div class="trending-post_image">
+            <div class="rank">@rank</div>
+            <!--Img size is 100 x 100 -->
+           <a  asp-controller="Home" asp-action="Post" asp-route-id="@item.Id"><img src="/Image/@item.Image" alt="@item.Description"></a> 
+        </div>
+        <div class="trending-post_content">
+            <!-- Category Header -->
+            <h5>@item.Category.Name</h5>
+            <a  asp-controller="Home" asp-action="Post" asp-route-id="@item.Id">@item.Title</a>
+            <div class="info__time">
+                <i class="far fa-clock"></i>
+                <p>@item.Created.ToString("dddd, dd MMMM yyyy")</p>
+                
+
+            </div>
+            <div class="info__time">
+                <i class="fas fa-eye"></i>
+                <p>@item.ViewCount</p>
+            </div>
+        </div>
+    </div>
+
+    }
+
+
+</div>
