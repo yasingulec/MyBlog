@@ -31,12 +31,12 @@ namespace Blog.Controllers
             return View(posts);
         }
         [HttpGet]
-        public IActionResult Post(int id)
+        public async Task <IActionResult> Post(int id)
         {
-            var post = _repo.GetPost(id);
+            var post =await _repo.GetPost(id);
             post.ViewCount += 1;
             _repo.UpdatePost(post);
-            _repo.SaveChangesAsync();
+           await _repo.SaveChangesAsync();
             return View(post);
         }
         [HttpPost]

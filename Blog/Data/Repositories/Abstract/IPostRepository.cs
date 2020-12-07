@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace Blog.Data.Repositories.Abstract
 {
-   public interface IPostRepository
+    public interface IPostRepository
     {
-        Post GetPost(int id);
+        Task<Post> GetPost(int id);
         List<Post> GetAllPosts();
         List<Post> GetAllPostsByCategory(string categoryname);
         List<Post> GetTrendingPosts();
+        List<Post> GetFeaturePosts();
         void AddPost(Post post);
         void UpdatePost(Post post);
-        void DeletePost(int id);
+        Task DeletePost(int id);
         Task<bool> SaveChangesAsync();
     }
 }

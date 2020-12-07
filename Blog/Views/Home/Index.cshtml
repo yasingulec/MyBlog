@@ -14,21 +14,9 @@
 
 
                         @await Component.InvokeAsync("Category")
-
-
                         <!-- Trending Post Side Bar Section-->
-
-
-
-                        @await Component.InvokeAsync("TrendingPost")
-
-                        <!-- Subscribe Form -->
-                        <form class="subcribe-box subcribe-box" action="/" method="POST">
-                            <h5>Subcribe</h5>
-                            <p>Lorem ipsum dolor amet, consectetur adipiscing elit, sed tempor.</p>
-                            <input placeholder="Your email" name="email" type="email">
-                            <a class="btn -normal" href="#">Subcribe</a>
-                        </form>
+                        @await Component.InvokeAsync("TrendingPost")           
+                      
                     </div>
                 </div>
 

@@ -7,11 +7,19 @@
     </div>
     @foreach (var item in Model.Categories)
     {
-        <a class="category -bar "asp-controller="Home" asp-action="Index" asp-route-categoryname="@item.Name">
-            <!--Category 1::Background Image size is 340 x 80   -->
-            <div class="category__background" style="background-image: url(assets/images/backgrounds/category-a.png)"></div>
-            <h5 class="title">@item.Name</h5>
+<a class="category -bar " asp-controller="Home" asp-action="Index" asp-route-categoryname="@item.Name">
+    <!--Category 1::Background Image size is 340 x 80   -->
+    <div class="category__background" style="background-image: url(assets/images/backgrounds/category-a.png)"></div>
+    <h5 class="title">@item.Name</h5>
+    @if (item.Posts != null)
+    {
+        @if (item.Posts.Count > 0)
+        {
             <h5 class="quantity">@item.Posts.Count</h5>
-        </a>
+        }
+    }
+
+
+</a>
     }
 </div>

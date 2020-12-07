@@ -21,9 +21,9 @@ namespace Blog.Data.Repositories.Concrete
             _ctx.Posts.Add(post);
         }
 
-        public void DeletePost(int id)
+        public async Task DeletePost(int id)
         {
-            _ctx.Posts.Remove(GetPost(id));
+            _ctx.Posts.Remove(await GetPost(id));
         }
 
         public List<Post> GetAllPosts()
@@ -36,9 +36,15 @@ namespace Blog.Data.Repositories.Concrete
             return _ctx.Posts.Include(p => p.Category).Where(p => p.Category.Name.ToLower().Equals(categoryname.ToLower())).ToList();
         }
 
-        public Post GetPost(int id)
+        public List<Post> GetFeaturePosts()
         {
-            return _ctx.Posts.Include(p=>p.Category).FirstOrDefault(p=>p.Id==id);
+            return _ctx.Posts.Where(x => x.isFeatured == true).OrderByDescending(x => x.Created).Take(3).ToList();
+        }
+
+        public async Task<Post> GetPost(int id)
+        {
+            var post =await Task.Run(()=> _ctx.Posts.Include(p => p.Category).FirstOrDefault(p => p.Id == id));
+            return post;
         }
 
         public List<Post> GetTrendingPosts()
@@ -59,5 +65,7 @@ namespace Blog.Data.Repositories.Concrete
         {
             _ctx.Posts.Update(post);
         }
+
+  
     }
 }

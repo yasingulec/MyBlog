@@ -35,3 +35,4 @@ C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Blog.pd
 C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Blog.genruntimeconfig.cache
 C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Blog.csproj.CopyComplete
 C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\TrendingPost\Default.cshtml.g.cs
+C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\FeaturePost\Default.cshtml.g.cs

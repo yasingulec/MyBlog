@@ -28,7 +28,7 @@ namespace Blog.Controllers
         }    
 
         [HttpGet]
-        public IActionResult Edit(int? id)
+        public async Task <IActionResult> Edit(int? id)
         {
             if (id == null)
             {
@@ -36,7 +36,7 @@ namespace Blog.Controllers
             }
             else
             {
-                var post = _repo.GetPost((int)id);
+                var post = await _repo.GetPost((int)id);
                 //todo: category idyi select list ile gönder
                 return View(new PostViewModel
                 {
@@ -46,8 +46,9 @@ namespace Blog.Controllers
                     Author=post.Author,
                     Body=post.Body,
                     CurrentImage=post.Image,
+                    isFeatured=post.isFeatured,
                     CategoryId=post.CategoryId,
-                    Tags=post.Tags
+                    Tags=post.Tags,
 
                 });
             }
@@ -66,6 +67,7 @@ namespace Blog.Controllers
                     Author="Yasin Güleç",
                     Body = vm.Body,     
                     CategoryId=vm.CategoryId,
+                    isFeatured=vm.isFeatured,
                     Tags=vm.Tags
                 };
                 if (vm.Image == null)
@@ -96,8 +98,8 @@ namespace Blog.Controllers
         [HttpGet]
         public async Task<IActionResult> Remove(int id)
         {
-            _repo.DeletePost(id);
-            await _repo.SaveChangesAsync();
+            Task.WaitAll(_repo.DeletePost(id));        
+            await _repo.SaveChangesAsync();         
             return RedirectToAction("Index");
         }
     }

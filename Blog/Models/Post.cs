@@ -12,6 +12,7 @@ namespace Blog.Models
         public string Author { get; set; } = "";
         public int ViewCount { get; set; }
         public DateTime Created { get; set; } = DateTime.Now;
+        public bool isFeatured { get; set; }
         public string Tags { get; set; } = "";
         public int CategoryId { get; set; }
         public Category Category { get; set; }

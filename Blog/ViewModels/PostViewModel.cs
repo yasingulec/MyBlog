@@ -15,6 +15,7 @@ namespace Blog.ViewModels
         public string CurrentImage { get; set; }
         public string Tags { get; set; }
         public string Author { get; set; }
+        public bool isFeatured { get; set; }
         public int CategoryId { get; set; }
         [DataType(DataType.Upload)]
         [MaxFileSize(5 * 1024 * 1024)]

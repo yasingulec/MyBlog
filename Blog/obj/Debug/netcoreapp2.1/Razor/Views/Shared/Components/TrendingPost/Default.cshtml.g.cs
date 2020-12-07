@@ -85,7 +85,7 @@ using Blog.ViewModels;
             WriteLiteral("</div>\r\n            <!--Img size is 100 x 100 -->\r\n           ");
             EndContext();
             BeginContext(457, 126, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ceb3c98096c4edeb52f1056e55eaebb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b5e491cf66c04b8db673b4e34d51792e", async() => {
                 BeginContext(525, 4, true);
                 WriteLiteral("<img");
                 EndContext();
@@ -150,7 +150,7 @@ WriteAttributeValue("", 560, item.Description, 560, 17, false);
             WriteLiteral("</h5>\r\n            ");
             EndContext();
             BeginContext(739, 83, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7af5660667f94d58ab031ab0b37b892e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "78a098c900994999b009b6ea46c0ae03", async() => {
                 BeginContext(808, 10, false);
 #line 22 "C:\Users\yasin\source\repos\BlogApplication\Blog\Views\Shared\Components\TrendingPost\Default.cshtml"
                                                                            Write(item.Title);
