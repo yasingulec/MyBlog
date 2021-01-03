@@ -1,0 +1,37 @@
+﻿@model CommentViewModel
+@{
+
+}
+
+@*<div>
+    <form method="post" asp-controller="home" asp-action="comment">
+        <input asp-for="PostId" type="hidden" />
+        <input asp-for="MainCommentId" type="hidden" />
+        <input asp-for="Message" />
+        <button type="submit">Submit</button>
+    </form>
+</div>*@
+
+
+<div class="post-footer__comment__form">
+    <form method="post" asp-controller="home" asp-action="comment">
+        <div class="row">
+            <input asp-for="PostId" type="hidden" />
+            <input asp-for="MainCommentId" type="hidden" />
+            <div class="col-12 col-sm-4">
+                <input type="text" placeholder="Name" name="name">
+            </div>
+            <div class="col-12 col-sm-4">
+                <input type="email" placeholder="Email" name="email">
+            </div>
+            <div class="col-12 col-sm-4">
+                <input type="text" placeholder="Webiste" name="website">
+            </div>
+        </div>
+        <textarea asp-for="Message" cols="30" rows="5" placeholder="Messages"></textarea>
+        <div class="center">
+            <button type="submit" class="btn -normal">Submit</button>
+        </div>
+    </form>
+ 
+</div>

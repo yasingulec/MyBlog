@@ -1,5 +1,6 @@
 ﻿using Blog.Data.Repositories.Abstract;
 using Blog.Models;
+using Blog.Models.Comments;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -21,19 +22,25 @@ namespace Blog.Data.Repositories.Concrete
             _ctx.Posts.Add(post);
         }
 
+        public void AddSubComment(SubComment comment)
+        {
+            _ctx.SubComments.Add(comment);
+        }
+
         public async Task DeletePost(int id)
         {
-            _ctx.Posts.Remove(await GetPost(id));
+            var post = await GetPost(id);
+            _ctx.Posts.Remove(post);
         }
 
         public List<Post> GetAllPosts()
         {
-           return _ctx.Posts.Include(p => p.Category).ToList();
+           return _ctx.Posts.Include(x=>x.MainComments).Include(p => p.Category).ToList();
         }
 
         public List<Post> GetAllPostsByCategory(string categoryname)
         {
-            return _ctx.Posts.Include(p => p.Category).Where(p => p.Category.Name.ToLower().Equals(categoryname.ToLower())).ToList();
+            return _ctx.Posts.Include(p => p.Category).Include(x => x.MainComments).Where(p => p.Category.Name.ToLower().Equals(categoryname.ToLower())).ToList();
         }
 
         public List<Post> GetFeaturePosts()
@@ -43,7 +50,7 @@ namespace Blog.Data.Repositories.Concrete
 
         public async Task<Post> GetPost(int id)
         {
-            var post =await Task.Run(()=> _ctx.Posts.Include(p => p.Category).FirstOrDefault(p => p.Id == id));
+            var post =await _ctx.Posts.Include(x=>x.MainComments).ThenInclude(mc=>mc.SubComments).Include(p => p.Category).FirstOrDefaultAsync(p => p.Id == id);
             return post;
         }
 

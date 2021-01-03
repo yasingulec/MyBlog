@@ -25,9 +25,9 @@ namespace Blog
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            
+
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(_Configuration.GetConnectionString("DefaultConnection")));
+       
             services.AddIdentity<IdentityUser,IdentityRole>(options=>
             {
                 options.Password.RequireDigit = false;
@@ -57,12 +57,14 @@ namespace Blog
                 options.LoginPath = "/Auth/Login";
                 options.LogoutPath = "/Auth/Logout";
             });
-            
-            services.AddHttpContextAccessor();
+           
             services.AddTransient<IPostRepository, PostRepository>();
             services.AddTransient<ICategoryRepository, CategoryRepository>();
             services.AddTransient<IFileManager, FileManager>();
-
+            services.AddMvc(options =>
+            {
+                options.CacheProfiles.Add("Monthly", new CacheProfile { Duration = 60 * 60 * 24 * 7 * 4 });
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -72,12 +74,14 @@ namespace Blog
             {
                 
             }
+
             app.UseDeveloperExceptionPage();
             app.UseStaticFiles();
             app.UseAuthentication();
             app.UseSession();
             app.UseStatusCodePages();
             app.UseMvcWithDefaultRoute();
+          
            
         }
     }

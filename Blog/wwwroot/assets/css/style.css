@@ -2802,7 +2802,9 @@ footer {
       color: #FF273C; }
 
 .breadcrumb {
-  padding: 3.125rem 0 4.375rem; }
+  padding: 3.125rem 0 4.375rem; 
+  background-color:white;
+}
   .breadcrumb ul > li {
     display: inline-block; }
     .breadcrumb ul > li > a {

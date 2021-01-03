@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Blog.Models.Comments;
+using System;
+using System.Collections.Generic;
 
 namespace Blog.Models
 {
@@ -16,5 +18,6 @@ namespace Blog.Models
         public string Tags { get; set; } = "";
         public int CategoryId { get; set; }
         public Category Category { get; set; }
+        public List<MainComment> MainComments { get; set; }
     }
 }

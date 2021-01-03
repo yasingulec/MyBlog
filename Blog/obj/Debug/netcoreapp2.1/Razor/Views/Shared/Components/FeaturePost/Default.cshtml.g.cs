@@ -66,7 +66,7 @@ using Blog.ViewModels;
             WriteLiteral("                <div class=\"post-card -tiny\">\r\n                    ");
             EndContext();
             BeginContext(370, 246, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2655a5c09afd49ad9e9899df4e523a17", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16ccc2fe51d24d5cb10999927f09c8d0", async() => {
                 BeginContext(457, 83, true);
                 WriteLiteral("\r\n                        <!-- img size 360 x 360 -->\r\n                        <img");
                 EndContext();
@@ -122,7 +122,7 @@ WriteAttributeValue("", 571, item.Description, 571, 17, false);
             WriteLiteral("\r\n                    <div class=\"card__content\">\r\n                        <h5 class=\"card__content-category\">Open source</h5>\r\n                        ");
             EndContext();
             BeginContext(768, 109, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "736b74b7280b486cb378a5dcb5e7ece4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5bae7901269b4de0a12d78c2f58d2898", async() => {
                 BeginContext(863, 10, false);
 #line 17 "C:\Users\yasin\source\repos\BlogApplication\Blog\Views\Shared\Components\FeaturePost\Default.cshtml"
                                                                                                                  Write(item.Title);

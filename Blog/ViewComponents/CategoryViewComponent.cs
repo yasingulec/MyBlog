@@ -20,7 +20,7 @@ namespace Blog.ViewComponents
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var categories = _categoryrepo.Categories();
+            var categories = await _categoryrepo.Categories();
             var posts = _postrepo.GetAllPosts();
 
             return await Task.FromResult(View(new CategoryListViewModel { 

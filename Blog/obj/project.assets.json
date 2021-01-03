@@ -2800,6 +2800,18 @@
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
         }
       },
+      "PhotoSauce.MagicScaler/0.11.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.7.1"
+        },
+        "compile": {
+          "lib/netcoreapp2.1/PhotoSauce.MagicScaler.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/PhotoSauce.MagicScaler.dll": {}
+        }
+      },
       "Remotion.Linq/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -3908,7 +3920,7 @@
           "ref/netstandard1.5/System.Runtime.dll": {}
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+      "System.Runtime.CompilerServices.Unsafe/4.7.1": {
         "type": "package",
         "compile": {
           "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
@@ -7741,6 +7753,32 @@
         "nuget.frameworks.nuspec"
       ]
     },
+    "PhotoSauce.MagicScaler/0.11.2": {
+      "sha512": "FnSf91zGakRVtqyELkoFtiJ5ae/dsC7OiJzU6cPulj+t3u5yXdswML4Fm93tkPhmTn6IpSZNRBShYcp6cOPtgw==",
+      "type": "package",
+      "path": "photosauce.magicscaler/0.11.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net461/PhotoSauce.MagicScaler.dll",
+        "lib/net461/PhotoSauce.MagicScaler.xml",
+        "lib/net472/PhotoSauce.MagicScaler.dll",
+        "lib/net472/PhotoSauce.MagicScaler.xml",
+        "lib/net5.0/PhotoSauce.MagicScaler.dll",
+        "lib/net5.0/PhotoSauce.MagicScaler.xml",
+        "lib/netcoreapp2.1/PhotoSauce.MagicScaler.dll",
+        "lib/netcoreapp2.1/PhotoSauce.MagicScaler.xml",
+        "lib/netcoreapp3.0/PhotoSauce.MagicScaler.dll",
+        "lib/netcoreapp3.0/PhotoSauce.MagicScaler.xml",
+        "lib/netstandard2.0/PhotoSauce.MagicScaler.dll",
+        "lib/netstandard2.0/PhotoSauce.MagicScaler.xml",
+        "lib/netstandard2.1/PhotoSauce.MagicScaler.dll",
+        "lib/netstandard2.1/PhotoSauce.MagicScaler.xml",
+        "package/PhotoSauce.png",
+        "photosauce.magicscaler.0.11.2.nupkg.sha512",
+        "photosauce.magicscaler.nuspec"
+      ]
+    },
     "Remotion.Linq/2.2.0": {
       "sha512": "fK/76UmpC0FXBlGDFVPLJHQlDLYnGC+XY3eoDgCgbtrhi0vzbXDQ3n/IYHhqSKqXQfGw/u04A1drWs7rFVkRjw==",
       "type": "package",
@@ -10695,26 +10733,31 @@
         "system.runtime.nuspec"
       ]
     },
-    "System.Runtime.CompilerServices.Unsafe/4.5.2": {
-      "sha512": "wprSFgext8cwqymChhrBLu62LMg/1u92bU+VOwyfBimSPVFXtsNqEWC92Pf9ofzJFlk4IHmJA75EDJn1b2goAQ==",
+    "System.Runtime.CompilerServices.Unsafe/4.7.1": {
+      "sha512": "zOHkQmzPCn5zm/BH+cxC1XbUS3P4Yoi3xzW7eRgVpDR2tPGSzyMZ17Ig1iRkfJuY0nhxkQQde8pgePNiA7z7TQ==",
       "type": "package",
-      "path": "system.runtime.compilerservices.unsafe/4.5.2",
+      "path": "system.runtime.compilerservices.unsafe/4.7.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/net461/System.Runtime.CompilerServices.Unsafe.xml",
         "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
         "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
         "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
         "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
         "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
         "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/net461/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/net461/System.Runtime.CompilerServices.Unsafe.xml",
         "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
         "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
         "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
         "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512",
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -12649,7 +12692,8 @@
       "Microsoft.Extensions.Logging.Debug >= 2.1.1",
       "Microsoft.NETCore.App >= 2.1.0",
       "Microsoft.VisualStudio.Web.BrowserLink >= 2.1.1",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.10"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.10",
+      "PhotoSauce.MagicScaler >= 0.11.2"
     ]
   },
   "packageFolders": {
@@ -12745,6 +12789,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[2.1.10, )"
+          },
+          "PhotoSauce.MagicScaler": {
+            "target": "Package",
+            "version": "[0.11.2, )"
           }
         },
         "imports": [
@@ -12757,7 +12805,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

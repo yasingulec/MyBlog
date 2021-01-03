@@ -1,29 +1,38 @@
 ﻿@model IEnumerable<Post>
     <div class="container">
-        <h3 class="text-center mt-5">
-            Admin Panel
-        </h3>
-        <a asp-action="Edit" asp-controller="Panel" class="font-weight-bold text-decoration-none">Create a New Post</a>
-        <table class="table table-hover table-bordered table-dark">
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>@item.Title</td>
-                        <td>
-                            <a asp-action="Edit" asp-controller="Panel" asp-route-id="@item.Id">
-                                Edit
-                            </a>
-                        </td>
-                        <td>
-                            <a asp-action="Remove" asp-controller="Panel" asp-route-id="@item.Id">
-                                Remove
-                            </a>
-                        </td>
-                    </tr>
+     
+        <div class="menucontrol" style="margin-top:20%">
 
-                }
+            <div class="controlls">
+                <nav class="nav">
+                    <a class="nav-link active" asp-controller="Panel" asp-action="Edit">Create a New Post</a>
+                    <a class="nav-link" asp-controller="Panel" asp-action="AddCategory">Create a New Category</a>
+                    <a class="nav-link" asp-controller="Panel" asp-action="Categories">Categories</a>
+                </nav>
+            </div>
 
-            </tbody>
-        </table>
+            <table class="table table-hover table-bordered">
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Title</td>
+                            <td>
+                                <a asp-action="Edit" asp-controller="Panel" asp-route-id="@item.Id">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a asp-action="Remove" asp-controller="Panel" asp-route-id="@item.Id">
+                                    <i class="fas fa-trash-alt "> </i>
+
+                                </a>
+                            </td>
+                        </tr>
+
+                    }
+
+                </tbody>
+            </table>
+        </div>
     </div>

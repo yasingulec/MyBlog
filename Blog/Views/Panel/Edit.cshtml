@@ -4,7 +4,11 @@
 }
 <link href="~/lib/Trumbowyg-master/dist/ui/trumbowyg.css" rel="stylesheet" />
 <div class="container" style="margin-top:210px;">
-    <form method="post" class="" asp-action="Edit" asp-controller="Panel" enctype="multipart/form-data">
+    <div class="validationerrors ">    
+             @Html.ValidationSummary()        
+    </div>
+
+    <form method="post" class="editform mt-5" asp-action="Edit" asp-controller="Panel" enctype="multipart/form-data">
         <input asp-for="Id" type="hidden" />
         <div class="row">
             <div class="col">
@@ -31,10 +35,8 @@
             <div class="col">
                 <div class="form-group">
                     <label>Category</label>
-                    <select class="form-control" asp-for="CategoryId">
-                        <option disabled selected value="">Select Category</option>
-                        <option value="1">Programming</option>
-                        <option value="2">Technology</option>
+                    <select class="form-control" asp-for="CategoryId" asp-items="ViewBag.Categories">
+                        <option disabled selected value="">Select Category</option>                    
                     </select>
                 </div>
             </div>
@@ -83,9 +85,6 @@
             <textarea class="form-control" id="editor" asp-for="Body"></textarea>
         </div>
 
-
-
-
         <div class="alert-danger d-inline-block" role="alert">
             @Html.ValidationMessageFor(a => a.Image)
         </div>
@@ -94,18 +93,18 @@
         </div>
     </form>
 </div>
-
 @section scripts{
     <script src="~/lib/Trumbowyg-master/dist/trumbowyg.min.js"></script>
     <script>
         $('#editor').trumbowyg();
     </script>
 <script>
-
     $('.custom-file-input').on('change', function () {
         let fileName = $(this).val().split('\\').pop();
         $(this).next('.custom-file-label').addClass("selected").html(fileName);     
     });
 </script>
-    
+<script>
+
+</script>
 }

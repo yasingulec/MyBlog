@@ -35,7 +35,8 @@
           "Microsoft.Extensions.Logging.Debug": "2.1.1",
           "Microsoft.NETCore.App": "2.1.0",
           "Microsoft.VisualStudio.Web.BrowserLink": "2.1.1",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.10"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.10",
+          "PhotoSauce.MagicScaler": "0.11.2"
         },
         "runtime": {
           "Blog.dll": {}
@@ -320,7 +321,7 @@
           "System.IO.Pipelines": "4.5.3",
           "System.Memory": "4.5.2",
           "System.Numerics.Vectors": "4.5.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2",
+          "System.Runtime.CompilerServices.Unsafe": "4.7.1",
           "System.Security.Principal.Windows": "4.5.1"
         },
         "runtime": {
@@ -361,7 +362,7 @@
           "Microsoft.Net.Http.Headers": "2.1.1",
           "System.Memory": "4.5.2",
           "System.Numerics.Vectors": "4.5.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2",
+          "System.Runtime.CompilerServices.Unsafe": "4.7.1",
           "System.Security.Cryptography.Cng": "4.5.0",
           "System.Threading.Tasks.Extensions": "4.5.1"
         },
@@ -729,6 +730,20 @@
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
         }
       },
+      "PhotoSauce.MagicScaler/0.11.2": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.7.1"
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/PhotoSauce.MagicScaler.dll": {
+            "assemblyVersion": "0.11.2.0",
+            "fileVersion": "0.11.2.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp2.1/PhotoSauce.MagicScaler.dll": {}
+        }
+      },
       "Remotion.Linq/2.2.0": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -941,11 +956,11 @@
       },
       "System.Memory/4.5.2": {},
       "System.Numerics.Vectors/4.5.0": {},
-      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+      "System.Runtime.CompilerServices.Unsafe/4.7.1": {
         "runtime": {
           "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
-            "assemblyVersion": "4.0.4.1",
-            "fileVersion": "4.6.26919.2"
+            "assemblyVersion": "4.0.6.0",
+            "fileVersion": "4.700.20.12001"
           }
         },
         "compile": {
@@ -2371,7 +2386,7 @@
       "Microsoft.Extensions.Primitives/2.1.1": {
         "dependencies": {
           "System.Memory": "4.5.2",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+          "System.Runtime.CompilerServices.Unsafe": "4.7.1"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
@@ -3483,7 +3498,7 @@
       "System.Text.Encoding.CodePages/4.5.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.1.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+          "System.Runtime.CompilerServices.Unsafe": "4.7.1"
         },
         "compileOnly": true
       },
@@ -3960,6 +3975,13 @@
       "path": "nuget.frameworks/4.7.0",
       "hashPath": "nuget.frameworks.4.7.0.nupkg.sha512"
     },
+    "PhotoSauce.MagicScaler/0.11.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FnSf91zGakRVtqyELkoFtiJ5ae/dsC7OiJzU6cPulj+t3u5yXdswML4Fm93tkPhmTn6IpSZNRBShYcp6cOPtgw==",
+      "path": "photosauce.magicscaler/0.11.2",
+      "hashPath": "photosauce.magicscaler.0.11.2.nupkg.sha512"
+    },
     "Remotion.Linq/2.2.0": {
       "type": "package",
       "serviceable": true,
@@ -4065,12 +4087,12 @@
       "path": "system.numerics.vectors/4.5.0",
       "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
     },
-    "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+    "System.Runtime.CompilerServices.Unsafe/4.7.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-wprSFgext8cwqymChhrBLu62LMg/1u92bU+VOwyfBimSPVFXtsNqEWC92Pf9ofzJFlk4IHmJA75EDJn1b2goAQ==",
-      "path": "system.runtime.compilerservices.unsafe/4.5.2",
-      "hashPath": "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
+      "sha512": "sha512-zOHkQmzPCn5zm/BH+cxC1XbUS3P4Yoi3xzW7eRgVpDR2tPGSzyMZ17Ig1iRkfJuY0nhxkQQde8pgePNiA7z7TQ==",
+      "path": "system.runtime.compilerservices.unsafe/4.7.1",
+      "hashPath": "system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512"
     },
     "System.Security.Principal.Windows/4.5.1": {
       "type": "package",

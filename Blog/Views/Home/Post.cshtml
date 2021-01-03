@@ -6,15 +6,242 @@
     ViewBag.Keywords = $"{Model.Tags?.Replace(","," ")} {Model.Category.Name}";
     var base_path = Context.Request.PathBase;
 }
-<h1>
+
+<div id="content">
+    <div class="post">
+        <div class="container">
+            <div class="post-standard">
+                <div class="post-standard__banner">
+                    <div class="post-standard__banner__image">
+                        @if (!String.IsNullOrEmpty(Model.Image))
+                        {
+                            var image_path = $"{base_path}/Image/{Model.Image}";
+                            <img src="@image_path " width="500" />
+                        }
+                    </div>
+                    <div class="post-standard__banner__content">
+                        <div class="post-card -center">
+                            <div></div>
+                            <div class="card__content">
+                                <h5 class="card__content-category">@Model.Category.Name</h5>
+                                <a class="card__content-title" post.html"="">@Model.Title</a>
+                                <div class="card__content-info">
+                                    <div class="info__time">
+                                        <i class="far fa-clock"></i>
+                                        <p>@Model.Created.ToString()</p>
+                                    </div>
+                                    <div class="info__comment">
+                                        <i class="far fa-comment"></i>
+                                        <p>@Model.MainComments.Count</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-8 mx-auto">
+                        <div class="post-standard__content">
+                            <!-- Post share icons -->
+                            <div id="post-share">
+                                <h5>Share:</h5>
+                                <div class="social-media">
+                                    <a href="#" style="background-color: #075ec8">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" style="background-color: #40c4ff">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#" style="background-image: linear-gradient(to top, #f2a937, #d92e73, #9937b7, #4a66d3), linear-gradient(to top, #af00e1, #ff9e35)">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#" style="background-color: #ff0000">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- content Starts here -->
+                            <p class="paragraph">
+                              @Html.Raw(@Model.Body)
+                            </p>
+                     
+                           
+                        
+                            <!-- Post footer -->
+                            <div class="post-footer">
+                                <div class="post-footer__tags center">
+                                    <div class="tags-group">
+                                        <a class="tag-btn" href="blog-category.html">Ui / Ux</a>
+                                        <a class="tag-btn" href="blog-category.html">Web Development</a>
+                                        <a class="tag-btn" href="blog-category.html">Productivity</a>
+                                        <a class="tag-btn" href="blog-category.html">Open Source</a>
+                                        <a class="tag-btn" href="blog-category.html">Freebies</a>
+                                    </div>
+                                </div>
+                                <div class="post-footer__author">
+                                    <div class="author__avatar">
+                                        <!-- img size 150 x 150 -->
+                                        <img src="~/assets/images/post_detail/auth.png" alt="Author avatar">
+                                    </div>
+                                    <!-- Author Info -->
+                                    <div class="author__info">
+                                        <h5>@Model.Author</h5>
+                                        <p>An avid Ui/Ux designer &amp; Web developer who is passionate about solving complex UX challenges across digital businesses.</p>
+                                        <!-- social Media -->
+                                        <div class="social-media">
+                                            <a href="#">
+                                                <i class="fab fa-facebook-f"></i>
+                                            </a>
+                                            <a href="#">
+                                                <i class="fab fa-twitter"></i>
+                                            </a>
+                                            <a href="#">
+                                                <i class="fab fa-instagram"></i>
+                                            </a>
+                                            <a href="#">
+                                                <i class="fab fa-dribbble"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Related Posts -->
+                                <div class="post-footer__related">
+                                    <div class="post-footer__related__item -prev">
+                                        <!-- <a href="post_standard.html"> <i class="fas fa-chevron-left"></i>Previous posts</a> -->
+                                        <div class="post-footer__related__item__content">
+                                            <!-- img size 360 x 360 -->
+                                            <img src="/assets/images/posts/webdesign.jpg" alt="Relate news image">
+                                            <div class="post-card ">
+                                                <div></div>
+                                                <div class="card__content">
+                                                    <h5 class="card__content-category">Open Source</h5>
+                                                    <a class="card__content-title" href="#">Best design resources websites every developer should bookmark</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-footer__related__item -next">
+                                        <!-- <a href="#">Next posts<i class="fas fa-chevron-right"></i></a> -->
+                                        <div class="post-footer__related__item__content">
+                                            <div class="post-card -right">
+                                                <div></div>
+                                                <div class="card__content">
+                                                    <h5 class="card__content-category">Open Source</h5>
+                                                    <a class="card__content-title" href="#">Best Open Source Tools For Developers</a>
+                                                </div>
+                                            </div>
+                                            <img src="assets/images/posts/Opensource.jpg" alt="Relate news image">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- comments  -->
+                                <div class="post-footer__comment">
+                                    <h3 class="comment-title"> <span>@Model.MainComments.Count COMMENT</span></h3>
+                                    <div class="post-footer__comment__detail">
+                                        @foreach (var item in Model.MainComments)
+                                        {
+                                            <div class="comment__item">
+                                                <div class="comment__item__content">
+                                                    <div class="comment__item__content__header">
+                                                        <h5>David Yu</h5>
+                                                        <div class="data">
+                                                            <p><i class="far fa-clock"></i>Nov 02, 2020</p>
+                                                        </div>
+                                                    </div>
+                                                    <p>
+                                                        @item.Message
+                                                    </p>
+                                                </div>
+                                            </div>
+                                           
+                                                await Html.RenderPartialAsync("_SubComment", new CommentViewModel { PostId = Model.Id, MainCommentId = item.Id });
+                                            
+                                            @foreach (var sc in item.SubComments)
+                                            {
+                                                <div class="comment__item" style="margin-left:50px;">
+                                                    <div class="comment__item__content">
+                                                        <div class="comment__item__content__header">
+                                                            <h5>David Yu</h5>
+                                                            <div class="data">
+                                                                <p><i class="far fa-clock"></i>Nov 02, 2020</p>
+                                                            </div>
+                                                        </div>
+                                                        <p>
+                                                            @sc.Message
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            }
+                                        }
+
+
+
+                                    </div>
+                                    <!-- comment Form -->
+                                    <h3 class="comment-title"> <span>Leave a comment</span></h3>
+                                    @{
+                                        await Html.RenderPartialAsync("_MainComment", new CommentViewModel { PostId = Model.Id, MainCommentId = 0 });
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<h1>
     @Model.Title
 </h1>
 @if (!String.IsNullOrEmpty(Model.Image))
 {
     var image_path = $"{base_path}/Image/{Model.Image}";
-    <img src="@image_path " width="500" />
+    <img src="@image_path " />
 }
 
 <div class="post-body">
     @Html.Raw(Model.Body)
 </div>
+
+<div class="comment-section">
+    @{
+        await Html.RenderPartialAsync("_MainComment", new CommentViewModel { PostId = Model.Id, MainCommentId = 0 });
+    }
+    @foreach (var item in Model.MainComments)
+    {
+        <p>
+            @item.Message--------@item.Created
+        </p>
+        <div style="margin-left:20px;">
+            <h4>Sub Comments</h4>
+            @{
+                await Html.RenderPartialAsync("_MainComment", new CommentViewModel { PostId = Model.Id, MainCommentId = item.Id });
+            }
+            @foreach (var sc in item.SubComments)
+            {
+        <p>
+            @sc.Message--------@item.Created
+        </p>
+            }
+        </div>
+     
+    }
+
+</div>*@

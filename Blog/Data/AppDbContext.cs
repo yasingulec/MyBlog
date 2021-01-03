@@ -1,4 +1,5 @@
 ﻿using Blog.Models;
+using Blog.Models.Comments;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -18,6 +19,8 @@ namespace Blog.Data
         }
         public DbSet<Post> Posts { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<MainComment> MainComments { get; set; }
+        public DbSet<SubComment> SubComments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

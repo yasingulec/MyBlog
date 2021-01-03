@@ -32,6 +32,44 @@ namespace Blog.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("Blog.Models.Comments.MainComment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Created");
+
+                    b.Property<string>("Message");
+
+                    b.Property<int?>("PostId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PostId");
+
+                    b.ToTable("MainComments");
+                });
+
+            modelBuilder.Entity("Blog.Models.Comments.SubComment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Created");
+
+                    b.Property<int>("MainCommentId");
+
+                    b.Property<string>("Message");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MainCommentId");
+
+                    b.ToTable("SubComments");
+                });
+
             modelBuilder.Entity("Blog.Models.Post", b =>
                 {
                     b.Property<int>("Id")
@@ -224,6 +262,21 @@ namespace Blog.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("Blog.Models.Comments.MainComment", b =>
+                {
+                    b.HasOne("Blog.Models.Post")
+                        .WithMany("MainComments")
+                        .HasForeignKey("PostId");
+                });
+
+            modelBuilder.Entity("Blog.Models.Comments.SubComment", b =>
+                {
+                    b.HasOne("Blog.Models.Comments.MainComment")
+                        .WithMany("SubComments")
+                        .HasForeignKey("MainCommentId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Blog.Models.Post", b =>
