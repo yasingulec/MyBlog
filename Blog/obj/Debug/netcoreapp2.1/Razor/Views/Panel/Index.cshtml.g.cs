@@ -60,7 +60,7 @@ using Blog.ViewModels;
             WriteLiteral("    <div class=\"container\">\r\n     \r\n        <div class=\"menucontrol\" style=\"margin-top:20%\">\r\n\r\n            <div class=\"controlls\">\r\n                <nav class=\"nav\">\r\n                    ");
             EndContext();
             BeginContext(214, 89, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d3e6fd6b81554bd2ba6461e78e649c73", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5cbd1f2e03d34713b217012d43fb827f", async() => {
                 BeginContext(282, 17, true);
                 WriteLiteral("Create a New Post");
                 EndContext();
@@ -85,7 +85,7 @@ using Blog.ViewModels;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(325, 93, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "69e8d00e383f4db4a645ddb343a565e6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5bd20125e820433b99c8e55c2d729f9e", async() => {
                 BeginContext(393, 21, true);
                 WriteLiteral("Create a New Category");
                 EndContext();
@@ -110,7 +110,7 @@ using Blog.ViewModels;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(440, 81, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f3aca3c581004c66b60e3e53ee686186", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c80c285758b14856bb23d9433acb6044", async() => {
                 BeginContext(507, 10, true);
                 WriteLiteral("Categories");
                 EndContext();
@@ -154,7 +154,7 @@ using Blog.ViewModels;
             WriteLiteral("</td>\r\n                            <td>\r\n                                ");
             EndContext();
             BeginContext(875, 171, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0a9e97ad4dee4edaa102bdbe60cf208e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aefd254753254b289283f65bf3d213bb", async() => {
                 BeginContext(943, 99, true);
                 WriteLiteral("\r\n                                    <i class=\"fas fa-edit\"></i>\r\n                                ");
                 EndContext();
@@ -191,7 +191,7 @@ using Blog.ViewModels;
             WriteLiteral("\r\n                            </td>\r\n                            <td>\r\n                                ");
             EndContext();
             BeginContext(1149, 182, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dfd0b283e00c46df84b18d3e192edc4a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3d5ab0a16f094732b07b52131a9a6fad", async() => {
                 BeginContext(1219, 108, true);
                 WriteLiteral("\r\n                                    <i class=\"fas fa-trash-alt \"> </i>\r\n\r\n                                ");
                 EndContext();

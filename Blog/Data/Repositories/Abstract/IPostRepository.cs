@@ -1,5 +1,6 @@
 ﻿using Blog.Models;
 using Blog.Models.Comments;
+using Blog.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,8 @@ namespace Blog.Data.Repositories.Abstract
     {
         Task<Post> GetPost(int id);
         List<Post> GetAllPosts();
-        List<Post> GetAllPostsByCategory(string categoryname);
+        IndexPageViewModel GetAllPosts(int pageNumber,string categoryname);
+
         List<Post> GetTrendingPosts();
         List<Post> GetFeaturePosts();
         void AddPost(Post post);

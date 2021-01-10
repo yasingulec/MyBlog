@@ -19,7 +19,7 @@
             <input asp-for="PostId" type="hidden" />
             <input asp-for="MainCommentId" type="hidden" />
             <div class="col-12 col-sm-4">
-                <input type="text" placeholder="Name" name="name">
+                <input asp-for="Name" type="text" placeholder="Name" >
             </div>
             <div class="col-12 col-sm-4">
                 <input type="email" placeholder="Email" name="email">
@@ -30,7 +30,7 @@
         </div>
         <textarea asp-for="Message" cols="30" rows="5" placeholder="Messages"></textarea>
         <div class="center">
-            <button type="submit" class="btn -normal">Submit</button>
+            <button type="submit" class="btn -normal">Add Comment</button>
         </div>
     </form>
  

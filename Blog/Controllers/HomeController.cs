@@ -27,19 +27,36 @@ namespace Blog.Controllers
             _fileManager = fileManager;
 
         }
-        public IActionResult Index(string categoryname)
+        public IActionResult Index( int pageNumber, string categoryName)
         {
-            var posts = string.IsNullOrEmpty(categoryname) ? _repo.GetAllPosts().OrderByDescending(x => x.Created).Take(10) : _repo.GetAllPostsByCategory(categoryname).OrderByDescending(x => x.Created);
-            return View(posts);
+            if (pageNumber < 1)
+                return RedirectToAction("Index", new { categoryName, pageNumber = 1 });
+
+            //var vm = new IndexPageViewModel
+            //{
+            //    Posts = string.IsNullOrEmpty(categoryname) ? _repo.GetAllPosts(pageNumber) : _repo.GetAllPostsByCategory(categoryname),
+            //    PageNumber=pageNumber,
+            //};
+
+            var vm = _repo.GetAllPosts(pageNumber, categoryName);
+          
+            return View(vm);
         }
         [HttpGet]
         public async Task<IActionResult> Post(int id)
         {
             var post = await _repo.GetPost(id);
-            post.ViewCount += 1;
-            _repo.UpdatePost(post);
+            var posts = _repo.GetAllPosts().Take(2);
+            var postandList = new PostAndListViewModel
+            {
+                Post = post,
+                Posts = posts,
+            };
+            postandList.Post.ViewCount += 1;
+            _repo.UpdatePost(postandList.Post);
             await _repo.SaveChangesAsync();
-            return View(post);
+
+            return View(postandList);
         }
         [HttpPost]
         public IActionResult Post(Post post)
@@ -50,13 +67,14 @@ namespace Blog.Controllers
         public async Task<IActionResult> Comment(CommentViewModel vm)
         {
             if (!ModelState.IsValid)
-                return RedirectToAction("Post", new {id= vm.PostId });
+                return RedirectToAction("Post", new { id = vm.PostId });
             var post = await _repo.GetPost(vm.PostId);
             if (vm.MainCommentId == 0)
             {
                 post.MainComments = post.MainComments ?? new List<MainComment>();
                 post.MainComments.Add(new MainComment
                 {
+                    Name = vm.Name,
                     Message = vm.Message,
                     Created = DateTime.Now,
                 });
@@ -67,6 +85,7 @@ namespace Blog.Controllers
                 var subComment = new SubComment
                 {
                     MainCommentId = vm.MainCommentId,
+                    Name = vm.Name,
                     Message = vm.Message,
                     Created = DateTime.Now
                 };

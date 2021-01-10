@@ -1,0 +1,8 @@
+C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp3.1\Blog.csprojAssemblyReference.cache
+C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp3.1\Blog.AssemblyInfoInputs.cache
+C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp3.1\Blog.AssemblyInfo.cs
+C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp3.1\Blog.csproj.CoreCompileInputs.cache
+C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp3.1\Blog.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp3.1\Blog.RazorAssemblyInfo.cache
+C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp3.1\Blog.RazorAssemblyInfo.cs
+C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp3.1\UserSecretsAssemblyInfo.cs

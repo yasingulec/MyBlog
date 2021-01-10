@@ -42,6 +42,8 @@ namespace Blog.Migrations
 
                     b.Property<string>("Message");
 
+                    b.Property<string>("Name");
+
                     b.Property<int?>("PostId");
 
                     b.HasKey("Id");
@@ -62,6 +64,8 @@ namespace Blog.Migrations
                     b.Property<int>("MainCommentId");
 
                     b.Property<string>("Message");
+
+                    b.Property<string>("Name");
 
                     b.HasKey("Id");
 

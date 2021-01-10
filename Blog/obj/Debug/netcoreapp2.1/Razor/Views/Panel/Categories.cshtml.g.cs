@@ -75,7 +75,7 @@ using Blog.ViewModels;
             WriteLiteral("</td>\r\n                            <td>\r\n                                ");
             EndContext();
             BeginContext(422, 171, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0aca35ebd6af418b9bb15eac0c9051e9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1df2ba94fc7a46718bf39dcd1d87623d", async() => {
                 BeginContext(490, 99, true);
                 WriteLiteral("\r\n                                    <i class=\"fas fa-edit\"></i>\r\n                                ");
                 EndContext();
@@ -112,7 +112,7 @@ using Blog.ViewModels;
             WriteLiteral("\r\n                            </td>\r\n                            <td>\r\n                                ");
             EndContext();
             BeginContext(696, 190, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "59c785439e734714847832dff0de3ba5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a8463d35e1ce4d5086982f1ff95722f1", async() => {
                 BeginContext(774, 108, true);
                 WriteLiteral("\r\n                                    <i class=\"fas fa-trash-alt \"> </i>\r\n\r\n                                ");
                 EndContext();

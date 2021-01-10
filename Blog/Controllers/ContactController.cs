@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Blog.Helpers;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,8 @@ namespace Blog.Controllers
     {
         public IActionResult Index()
         {
+            //var mailSender = new MailSendHelper();
+            //mailSender.SendMessage();
             return View();
         }
     }

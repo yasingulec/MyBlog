@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Post>
+﻿@model IndexPageViewModel
 @{
     ViewBag.Title = "Blog Website";
     ViewBag.Description = "This blog about programming";
@@ -15,14 +15,14 @@
 
                         @await Component.InvokeAsync("Category")
                         <!-- Trending Post Side Bar Section-->
-                        @await Component.InvokeAsync("TrendingPost")           
-                      
+                        @await Component.InvokeAsync("TrendingPost")
+
                     </div>
                 </div>
 
                 <div class="col-12 col-md-7 col-lg-8 order-md-1">
                     <div class="row">
-                        @foreach (var item in Model)
+                        @foreach (var item in Model.Posts)
                         {
                             var image_path = $"{base_path}/Image/{item.Image}";
                             <div class="col-sm-6 col-md-12">
@@ -61,7 +61,35 @@
                         }
                     </div>
                 </div>
+
             </div>
+        </div>
+        <div class="pagination">
+            <ul>
+                @if (Model.PageNumber > 1)
+                {
+                    <li><a class="previous" asp-action="Index" asp-controller="Home" asp-route-categoryName="@Model.categoryName" asp-route-pageNumber="@(Model.PageNumber-1)">&lt;</a></li>
+
+                }
+                @{
+                    for (int i = 1; i <= Model.PageCount; i++)
+                    {
+
+                        string activeClass = i == Model.PageNumber ? "active" : "";
+
+                        <li class="@activeClass pagination__page-number"><a asp-action="Index" asp-controller="Home" asp-route-category="@Model.categoryName" asp-route-pageNumber="@i">@i</a></li>
+
+                    }
+                }
+                @*<li class="active"><a href="javascript:void(0)">1</a></li>
+                    <li class="pagination__page-number"><a href="javascript:void(0)">3</a></li>*@
+                @if (Model.NextPage)
+                {
+                    <li><a class="next" asp-action="Index" asp-controller="Home" asp-route-categoryName="@Model.categoryName" asp-route-pageNumber="@(Model.PageNumber+1)">&gt;</a></li>
+
+
+                }
+            </ul>
         </div>
     </div>
 </div>

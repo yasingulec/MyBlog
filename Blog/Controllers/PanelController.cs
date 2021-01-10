@@ -62,6 +62,10 @@ namespace Blog.Controllers
             ViewBag.Categories = new SelectList(categories, "Id", "Name");
             if (ModelState.IsValid)
             {
+                if (vm.CategoryId==0)
+                {
+                    return StatusCode(404);
+                }
                 var post = new Post
                 {
                     Id = vm.Id,

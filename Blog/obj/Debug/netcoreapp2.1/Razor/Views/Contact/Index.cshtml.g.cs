@@ -90,7 +90,7 @@ using Blog.ViewModels;
             WriteLiteral("           </div>\r\n                <div class=\"col-12 col-md-6\">\r\n                    <div class=\"contact-us__form\">\r\n                        <h3 class=\"contact-title\">LEAVE A MESSAGE</h3>\r\n                        ");
             EndContext();
             BeginContext(2262, 491, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "366985d6ca874e68a78cd1d964749191", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c62d2de5e18041668993e51235d5a481", async() => {
                 BeginContext(2279, 467, true);
                 WriteLiteral(@"
                             <input type=""text"" placeholder=""Name"" name=""name"" />

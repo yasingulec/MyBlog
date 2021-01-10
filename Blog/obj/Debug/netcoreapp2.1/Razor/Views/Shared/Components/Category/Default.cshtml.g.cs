@@ -62,7 +62,7 @@ using Blog.ViewModels;
 #line default
 #line hidden
             BeginContext(248, 490, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "62e975f3bbeb46a59c727777e99a06e2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e4956d18f7f443dc9d0854309c5ff2c7", async() => {
                 BeginContext(351, 203, true);
                 WriteLiteral("\r\n    <!--Category 1::Background Image size is 340 x 80   -->\r\n    <div class=\"category__background\" style=\"background-image: url(assets/images/backgrounds/category-a.png)\"></div>\r\n    <h5 class=\"title\">");
                 EndContext();

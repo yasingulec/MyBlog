@@ -37,7 +37,6 @@ C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Razor\V
 C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\FeaturePost\Default.cshtml.g.cs
 C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Razor\Views\About\Index.cshtml.g.cs
 C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Contact\Index.cshtml.g.cs
-C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Blog.csprojAssemblyReference.cache
 C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Panel\AddCategory.cshtml.g.cs
 C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Panel\Categories.cshtml.g.cs
 C:\Users\yasin\source\repos\BlogApplication\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Home\_MainComment.cshtml.g.cs
