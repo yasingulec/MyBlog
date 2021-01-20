@@ -1,4 +1,5 @@
-﻿<div class="no-pd" id="content">
+﻿@model ContactViewModel
+<div class="no-pd" id="content">
     <div class="container">
         <div class="breadcrumb mt-5">
             <ul>
@@ -35,12 +36,12 @@
                 <div class="col-12 col-md-6">
                     <div class="contact-us__form">
                         <h3 class="contact-title">LEAVE A MESSAGE</h3>
-                        <form action="/">
-                            <input type="text" placeholder="Name" name="name" />
-                            <input type="email" placeholder="Email" name="email" />
-                            <input type="text" placeholder="Website" name="website" />
-                            <textarea name="message" cols="30" rows="8" placeholder="Message"></textarea>
-                            <button class="btn -normal">Send message</button>
+                        <form asp-action="Index" asp-controller="Contact" method="post">
+                            <input type="text" placeholder="Name" asp-for="Name" />
+                            <input type="email" placeholder="Email" asp-for="Email" />
+                            <input type="text" placeholder="Website" asp-for="Website" />
+                            <textarea asp-for="Message" cols="30" rows="8" placeholder="Message"></textarea>
+                            <button type="submit" class="btn -normal">Send message</button>
                         </form>
                     </div>
                 </div>

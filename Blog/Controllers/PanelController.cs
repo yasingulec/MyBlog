@@ -62,7 +62,7 @@ namespace Blog.Controllers
             ViewBag.Categories = new SelectList(categories, "Id", "Name");
             if (ModelState.IsValid)
             {
-                if (vm.CategoryId==0)
+                if (vm.CategoryId == 0)
                 {
                     return StatusCode(404);
                 }
@@ -81,13 +81,11 @@ namespace Blog.Controllers
                     post.Image = vm.CurrentImage;
                 else
                 {
-                    if (!string.IsNullOrEmpty(vm.CurrentImage))                   
+                    if (!string.IsNullOrEmpty(vm.CurrentImage))
                         _fileManager.RemoveImage(vm.CurrentImage);
-                    
-                    post.Image =  _fileManager.SaveImage(vm.Image);
-                }
-              
 
+                    post.Image = _fileManager.SaveImage(vm.Image);
+                }
 
                 if (vm.Id > 0)
                 {
@@ -109,10 +107,10 @@ namespace Blog.Controllers
         }
 
         [HttpGet]
-        public async Task <IActionResult> Remove(int id)
+        public async Task<IActionResult> Remove(int id)
         {
-           await _repo.DeletePost(id);
-           await _repo.SaveChangesAsync();
+            await _repo.DeletePost(id);
+            await _repo.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
@@ -135,12 +133,11 @@ namespace Blog.Controllers
             return View(categories);
         }
         [HttpGet]
-        public async Task <IActionResult> RemoveCategory(int id)
+        public async Task<IActionResult> RemoveCategory(int id)
         {
-           await _categoryRepository.RemoveCategory(id);
-           await  _categoryRepository.SaveChangesAsync();
+            await _categoryRepository.RemoveCategory(id);
+            await _categoryRepository.SaveChangesAsync();
             return RedirectToAction("Categories");
-           
         }
     }
 }

@@ -20,7 +20,6 @@ namespace Blog.Controllers
     {
         private IPostRepository _repo;
         private IFileManager _fileManager;
-
         public HomeController(IPostRepository repo, IFileManager fileManager)
         {
             _repo = repo;

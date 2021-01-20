@@ -27,14 +27,14 @@
     </div>
     <!--Nav bar -->
     <header class="theme-default">
-        <div id="search-box">
+        @*<div id="search-box">
             <div class="container">
                 <form action="/" method="POST">
                     <input type="text" placeholder="Searching for news" name="search" />
                     <button><i class="fas fa-arrow-right"></i></button>
                 </form>
             </div>
-        </div>
+        </div>*@
         <div class="container">
             <div class="header-wrapper">
                 <a class="header__logo" asp-action="Index" asp-controller="Home"><img src="~/assets/images/logo3.png" alt="Logo" /></a>
@@ -42,13 +42,7 @@
                     <ul>
                         <li class="nav-item active"><a asp-action="Index" asp-controller="Home">Home</a></li>
                         <li class="nav-item">
-                            <a asp-action="Index" asp-controller="Home">Blog</a>
-                            <!-- Blog category drop down -->
-                            <!-- <ul class="dropdown-menu">
-                              <li><a href="#">BLOG CATEGORY 1</a></li>
-                              <li><a href="#">BLOG CATEGORY 2</a></li>
-                              <li><a href="#">BLOG CATEGORY 3</a></li>
-                            </ul> -->
+                            <a asp-action="Index" asp-controller="Home">Blog</a>                
                         </li>
                         <li class="nav-item"><a asp-action="Index" asp-controller="About">About Me</a></li>
                         <li class="nav-item"><a asp-action="Index" asp-controller="Contact">Contact</a></li>
@@ -68,7 +62,6 @@
                 </nav>
                 <!-- Social Icons -->
                 <div class="header__icon-group">
-                    <a href="#" id="search"><i class="fas fa-search"></i></a>
                     <div class="social">
                         <a href="https://www.facebook.com/yasingulec34" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://twitter.com/ygfromgng" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -86,9 +79,6 @@
     <div id="main">
         @RenderBody()
     </div>
-
-
-
 
     <footer>
         <div class="container">

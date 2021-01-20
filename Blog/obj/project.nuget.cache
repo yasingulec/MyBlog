@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6N5Dz7Rt7pyleFJppW+4qRUiX0dQOzQEkC27Fe62vaByY+7MpFaWdmmY18DgEdLnub8TTY7Ti7JkQGzaVD2ZkA==",
+  "dgSpecHash": "yrEQlMlY7pX54amftFiR86YQ1LioVzfYP5m6xoez4BIKzwZIyTPbsM6CWLeFNEBEM755fwJXUBO1GMV0QPFswg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\yasin\\source\\repos\\BlogApplication\\Blog\\Blog.csproj",
+  "projectFilePath": "D:\\GitProjects\\MyBlog\\Blog\\Blog.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yasin\\.nuget\\packages\\mailkit\\2.10.1\\mailkit.2.10.1.nupkg.sha512",
     "C:\\Users\\yasin\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",

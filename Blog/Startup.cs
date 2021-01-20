@@ -60,6 +60,7 @@ namespace Blog
            
             services.AddTransient<IPostRepository, PostRepository>();
             services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IContactRepository, ContactRepository>();
             services.AddTransient<IFileManager, FileManager>();
             services.AddMvc(options =>
             {
